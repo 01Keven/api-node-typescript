@@ -1,5 +1,7 @@
 // Esse arquivo vai ter o codigo base do Servidor
 import express from 'express'; // Importando tudo do express
+import 'dotenv/config';
+
 import { router } from './routes/index';
 
 // Instancia do express

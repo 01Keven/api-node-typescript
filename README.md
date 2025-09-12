@@ -39,3 +39,33 @@ req -> dados enviados do front para o back
 
 // para dar semantica nos status das requisições
 ``npm add http-status-codes``
+
+Variaveis de Ambiente
+
+- Configurar funcionamento do servidor com escala ainda em produção
+
+.env (.env.example para segurança)
+
+.proces.env.PORT
+
+``npm add dotenv `` -> inicializar variaveis de ambiente
+
+Converter ts para js em produção
+- webpacked (compilador)
+- tsc (precisa do tsconfig)
+
+``npx tsc --init`` -> da instruçoes para o compilador, para conseguir usar o node
+
+``npx tsc``
+
+``    "outDir": "./build",
+    "rootDir": "./src"
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "build"
+  ]
+}``

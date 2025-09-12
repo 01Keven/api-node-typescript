@@ -5,7 +5,8 @@ import { StatusCodes } from 'http-status-codes';
 const router = Router();
 
 // Solicita requisição e entrega uma resposta ao server
-// Aceita requisições pelas rotas
+// Acei
+// ta requisições pelas rotas
 router.get('/', (_, res) => {
     return res.send('Response accept!'); 
 });
