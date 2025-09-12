@@ -69,3 +69,23 @@ Converter ts para js em produção
     "build"
   ]
 }``
+
+-----
+
+Estrutura de pastas
+
+- controllers
+    -> funções que vao ser a porta de entrada a partir dos endpoints
+    -> usa para retorna alguma coisa para o usuario
+    -> usa para manipular dados para o database
+    -> manipula e processa os dados
+    
+    **ver sobre middleware**
+
+- database
+    -> configuraçoes do banco de dados
+
+- shared
+    -> Arquivos que podem ser compartilhados globalmente pelo projeto
+    -> middlewares = funçoes genericas e compartilhadas Ex: token acess (validações)
+    -> services = indicar tudo que é acesso externo
