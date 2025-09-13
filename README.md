@@ -80,6 +80,8 @@ Estrutura de pastas
     -> usa para manipular dados para o database
     -> manipula e processa os dados
     
+    Separar em metodos
+    
     **ver sobre middleware**
 
 - database
@@ -89,3 +91,9 @@ Estrutura de pastas
     -> Arquivos que podem ser compartilhados globalmente pelo projeto
     -> middlewares = funçoes genericas e compartilhadas Ex: token acess (validações)
     -> services = indicar tudo que é acesso externo
+
+------
+
+Arquitetura KISS
+
+Yup -> biblioteca para validação de dados

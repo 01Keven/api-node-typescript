@@ -15,7 +15,9 @@ export default defineConfig([
   { files: ["**/*.css"], plugins: { css }, language: "css/css", extends: ["css/recommended"] },
   { 
     rules: {
-      semi: ["error", "always"], // ponto e virgula no final das linhas
+      "semi": ["error", "always"],
+      "@typescript-eslint/no-empty-object-type": "off"
+      
     },
   }
 ]);
