@@ -1,6 +1,6 @@
 // Este arquivo vai criar as cidades
 
-import { Request, Response } from "express";
+import { Request, RequestHandler } from "express";
 import { StatusCodes } from "http-status-codes";
 import * as yup from 'yup';
 
@@ -12,30 +12,24 @@ import * as yup from 'yup';
 // 1. O schema é a ÚNICA FONTE DA VERDADE para a estrutura dos dados.
 const bodyValidation = yup.object({
     // strict -> Força verificação de tipo mais exata
-    name: yup.string().strict().required('nome obrigatorio').min(3),
-    state: yup.string().strict().required('nome obrigatorio').min(3),
+    name: yup.string().strict().required('Nome obrigatorio').min(3),
+    state: yup.string().strict().required('Estado obrigatorio').min(3),
 });
 
 // 2. O tipo é INFERIDO (criado) a partir do schema.
 type ICities = yup.InferType<typeof bodyValidation>;
 
-// Cadastrar dados no banco
-
-export const create = async (req: Request<{}, {}, ICities>, res: Response) => {
-
-    if (req.body && req.body.name) {
-        console.log('o tipo de req.body.name é:', typeof req.body.name);
-    }
-
+// MiddleWare
+// RequestHandler -> Uma função que retorna void com req, res e next
+export const createBodyValidator: RequestHandler = async (req, res, next) => {
     try {
         // Validando dados
-        // abortEarly false -> permiete lista todos os problemas de uma vez
+        // abortEarly false -> permite listar todos os problemas de uma vez
         await bodyValidation.validate(req.body, { abortEarly: false });
         
         console.log(req.body.name);
         console.log(req.body.state);
-
-        return res.status(StatusCodes.CREATED).json(req.body);
+        return res.status(StatusCodes.CREATED).json(req.body) && next();
 
     } catch(error) {
         
@@ -54,6 +48,15 @@ export const create = async (req: Request<{}, {}, ICities>, res: Response) => {
             errors
         });
     }
+};
 
+// Cadastrar dados no banco
+export const create = async (req: Request<{}, {}, ICities>) => {
+
+    if (req.body && req.body.name) {
+        console.log('o tipo de req.body.name é:', typeof req.body.name);
+    }
     
+    
+
 };
