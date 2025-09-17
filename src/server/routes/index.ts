@@ -15,7 +15,9 @@ router.get('/', (_, res) => {
 
 // Controller de cities
 // Validando antes da criação
-router.post('/cities', CitiesController.createBodyValidator, CitiesController.create);
+router.post('/cities', CitiesController.createValidator, CitiesController.create);
+
+router.get('/getcities', CitiesController.getAllValidator,CitiesController.getAll);
 
 // router.post('/teste', (req, res) => {
 //     console.log(req.body);
