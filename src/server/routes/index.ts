@@ -4,6 +4,7 @@ import { Router } from 'express';
 
 import { CitiesController } from './../controllers';
 
+
 const router = Router();
 
 // Solicita requisição e entrega uma resposta ao server
@@ -17,7 +18,7 @@ router.get('/', (_, res) => {
 // Validando antes da criação
 router.post('/cities', CitiesController.createValidator, CitiesController.create);
 
-router.get('/getcities', CitiesController.getAllValidator,CitiesController.getAll);
+router.get('/cities', CitiesController.getAllValidator,CitiesController.getAll);
 
 // router.post('/teste', (req, res) => {
 //     console.log(req.body);
