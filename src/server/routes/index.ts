@@ -20,6 +20,8 @@ router.post('/cities', CitiesController.createValidator, CitiesController.create
 
 router.get('/cities', CitiesController.getAllValidator,CitiesController.getAll);
 
+router.get('/cities/:id', CitiesController.getByIdValidator, CitiesController.getByID);
+
 // router.post('/teste', (req, res) => {
 //     console.log(req.body);
 //     // return res.send('post!');
