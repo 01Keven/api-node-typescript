@@ -18,6 +18,10 @@ router.get('/', (_, res) => {
 // Validando antes da criação
 router.post('/cities', CitiesController.createValidator, CitiesController.create);
 
+router.put('/cities/:id', CitiesController.uptadeByIdValidator, CitiesController.updateById);
+
+router.delete('/cities/:id', CitiesController.deleteByIdValidator, CitiesController.deleteById);
+
 router.get('/cities', CitiesController.getAllValidator,CitiesController.getAll);
 
 router.get('/cities/:id', CitiesController.getByIdValidator, CitiesController.getByID);

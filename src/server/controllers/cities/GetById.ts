@@ -6,7 +6,7 @@ import { Request, Response } from 'express';
 // Usar interface manual para esse tipo pois com typeof o routes não consegue tipar o id
 interface IParamProps {
     id?: number
-}
+};
 
 const getByIdParams = yup.object({
     id: yup.number().integer().required().moreThan(0),
