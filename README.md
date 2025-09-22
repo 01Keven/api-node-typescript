@@ -97,3 +97,15 @@ Estrutura de pastas
 Arquitetura KISS
 
 Yup -> biblioteca para validação de dados
+
+-------
+
+Testes automatizados com Jest
+- Teste de integração (ponta a ponta)
+- chamada pro endpoint, testar controller, dados inseridos no BD, response da api
+
+``npm add jest ts-jest @types/jest``
+``npm init jest@latest``
+
+// conseguir pegar o servidor para testar
+``npm add -D supertest @types/supertes``
